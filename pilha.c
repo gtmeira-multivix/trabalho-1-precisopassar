@@ -23,7 +23,7 @@ void pilha_push(Pilha *p, Token t) {
 
     tmp->prox = p->primeiro;
     p->primeiro = tmp;
-    free(tmp);
+    
 }
 
 Token pilha_pop(Pilha *p) {
@@ -53,6 +53,7 @@ Token pilha_primeiro(Pilha *p) {
 int pilha_vazia(Pilha *p) {
 	if (p->primeiro == NULL){
         return(1);
+        free (p);
     }
     else{
         return(0);
@@ -80,6 +81,7 @@ void pilha_imprimir(Pilha *p) {
         Token tmpToken = tmp->token;
         token_imprimir(tmpToken);
         tmp = tmp->prox;
+        free (tmp);
     }
 }
 
