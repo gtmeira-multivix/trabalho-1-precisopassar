@@ -71,6 +71,8 @@ int fila_vazia(Fila *f) {
 }
 
 void fila_destruir(Fila *f) {
+	free(f->primeiro);
+	free(f->ultimo);
 	free(f);
 }
 
