@@ -2,7 +2,7 @@
 #define _TOKENIZACAO_H
 
 typedef enum tipo_token {
-  NUMERO, OPERADOR, ABRE_PARENTESES, FECHA_PARENTESES
+  NUMERO, OPERADOR, OPENPRT, CLOSEPRT
 } TipoToken;
 
 typedef enum tipo_operador {
@@ -21,20 +21,12 @@ typedef struct token {
   int precedencia;
 } Token;
 
-/*
- * Cria um token do tipo número, armazenando o valor passado
- * como parâmetro.
- */
+
 Token token_criar_numero(double valor);
 
-/*
- * Lê o próximo token a partir da entrada padrão.
- */
+
 Token token_proximo();
 
-/*
- * Imprime o token na saída padrão.
- */
 void token_imprimir(Token t);
 
 #endif

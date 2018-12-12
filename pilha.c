@@ -12,29 +12,72 @@ struct pilha {
 };
 
 Pilha* pilha_criar() {
-	//Implemente
+	Pilha *p = (Pilha *)malloc(sizeof(Pilha));
+    p->primeiro = NULL;
+    return p;
 }
 
 void pilha_push(Pilha *p, Token t) {
-	//Implemente
+	No *tmp = (No *)malloc(sizeof(No));
+    tmp->token = t;
+
+    tmp->prox = p->primeiro;
+    p->primeiro = tmp;
 }
 
 Token pilha_pop(Pilha *p) {
-	//Implemente
+    if(p->primeiro == NULL){
+        
+        return;
+    }
+
+	Token tmpToken = p->primeiro->token;
+    No *tmp = p->primeiro;
+
+    p->primeiro = p->primeiro->prox;
+    free(tmp);
+
+    return(tmpToken);
 }
 
 Token pilha_primeiro(Pilha *p) {
-	//Implemente
+    if(p->primeiro == NULL){
+        
+        return;
+    }
+    Token tmpToken = p->primeiro->token;
+	return(tmpToken);
 }
 
 int pilha_vazia(Pilha *p) {
-	//Implemente
+	if (p->primeiro == NULL){
+        return(1);
+    }
+    else{
+        return(0);
+    }
 }
 
 void pilha_destruir(Pilha *p) {
-	//Implemente
+	No *tmp = p->primeiro;
+    while(tmp != NULL){
+        No *excluir = tmp;
+        tmp = tmp->prox;
+        free(excluir);
+    }
+    free(p);
 }
 
 void pilha_imprimir(Pilha *p) {
-	//Implemente
+	if(p->primeiro == NULL){
+       
+        return;
+    }
+    No *tmp = p->primeiro;
+    while(tmp != NULL){
+        Token tmpToken = tmp->token;
+        token_imprimir(tmpToken);
+        tmp = tmp->prox;
+    }
 }
+

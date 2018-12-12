@@ -5,31 +5,24 @@
 Token token_proximo() {
   Token t;
   
-  //Obter próimo caractere da entrada:
-  int c = getchar();
-  
-  //Avançar enquanto houver espaços vazios na entrada:
-  while(isspace(c) && c != '\n') {
-    c = getchar();
+  int digito = getchar();
+  while(isspace(digito) && digito != '\n') {
+    digito = getchar();
   }
-  
-  //Se chegamos ao fim da linha, nossa expressão terminou:
-  if(c == '\n') {
+  if(digito == '\n') {
     t.tipo = FIM;
     return t;
   }
-  
-  if(isdigit(c)) {
-    //Se for número, vamos colocar o caractere de volta na stream, para ler com scanf:
-    ungetc(c, stdin);
+  if(isdigit(digito)) {
+    ungetc(digito, stdin);
     double valor;
-    scanf("%lf", &valor);
+    scanf(" %lf", &valor);
     t.tipo = NUMERO;
     t.valor = valor;
     return t;
   } else {
-    //Se não for número, é operador ou parênteses:
-    switch(c) {
+
+    switch(digito) {
       case '+':
         t.tipo = OPERADOR;
         t.operador = SOMA;
@@ -66,11 +59,11 @@ Token token_proximo() {
         break;
       
       case '(':
-        t.tipo = ABRE_PARENTESES;
+        t.tipo = OPENPRT;
         break;
       
       case ')':
-        t.tipo = FECHA_PARENTESES;
+        t.tipo = CLOSEPRT;
         break;
       
       default:
@@ -108,11 +101,11 @@ void token_imprimir(Token t) {
       }
       break;
     
-    case ABRE_PARENTESES:
+    case OPENPRT:
       printf("( ");
       break;
     
-    case FECHA_PARENTESES:
+    case CLOSEPRT:
       printf(") ");
       break;
     
