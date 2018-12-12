@@ -12,23 +12,22 @@ struct pilha {
 };
 
 Pilha* pilha_criar() {
-	Pilha *p = (Pilha*)malloc(sizeof(Pilha));
+	Pilha *p = (Pilha *)malloc(sizeof(Pilha));
     p->primeiro = NULL;
     return p;
 }
 
 void pilha_push(Pilha *p, Token t) {
-	No *tmp = (No*)malloc(sizeof(No));
+	No *tmp = (No *)malloc(sizeof(No));
     tmp->token = t;
 
     tmp->prox = p->primeiro;
     p->primeiro = tmp;
-    free(tmp);
 }
 
 Token pilha_pop(Pilha *p) {
     if(p->primeiro == NULL){
-        
+        printf("\n\n\n ### Expressao invalida (pop), calculo incompleto;");
         return;
     }
 
@@ -43,8 +42,7 @@ Token pilha_pop(Pilha *p) {
 
 Token pilha_primeiro(Pilha *p) {
     if(p->primeiro == NULL){
-    	
-        
+        printf("\n\n ### Expressao invalida (primeiro), calculo incompleto;");
         return;
     }
     Token tmpToken = p->primeiro->token;
@@ -66,14 +64,13 @@ void pilha_destruir(Pilha *p) {
         No *excluir = tmp;
         tmp = tmp->prox;
         free(excluir);
-        free(tmp);
     }
     free(p);
 }
 
 void pilha_imprimir(Pilha *p) {
 	if(p->primeiro == NULL){
-       
+        printf("\n\n ### Expressao invalida (impressao), calculo incompleto;");
         return;
     }
     No *tmp = p->primeiro;

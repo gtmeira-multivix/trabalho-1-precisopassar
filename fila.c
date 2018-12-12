@@ -2,16 +2,15 @@
 #include <stdlib.h>
 #include "fila.h"
 
-typedef struct No {
+
+typedef struct no {
   Token token;
-  struct No *prox;
+  struct no *prox;
 } No;
 
-typedef struct fila {
-  struct No *primeiro;
-  struct No *ultimo;
-} Fila;
-
+struct fila {
+  No *primeiro, *ultimo;
+};
 
 Fila* fila_criar() {
 	Fila *f = (Fila*) malloc(sizeof(Fila));
@@ -21,7 +20,7 @@ Fila* fila_criar() {
 }
 
 void fila_add(Fila *f, Token t) {
-	No *tmp = (No*) malloc(sizeof(No));
+	No *tmp = (No *) malloc(sizeof(No));
     tmp->token = t;
     tmp->prox = NULL;
 
@@ -33,19 +32,15 @@ void fila_add(Fila *f, Token t) {
 
     f->ultimo->prox = tmp;
     f->ultimo = tmp;
-    
-    
-    
-    
 }
 
 Token fila_remover(Fila *f) {
     if(f->primeiro == NULL){
-        printf("A fila esta vazia.\n");
+        printf("A fila esta vazia.");
         return;
     }
 
-    No *tmp = f->primeiro;
+    No *tmp;
     tmp = f->primeiro;
 
     f->primeiro = f->primeiro->prox;
@@ -71,7 +66,6 @@ int fila_vazia(Fila *f) {
 }
 
 void fila_destruir(Fila *f) {
-	free(f->primeiro);
 	free(f);
 }
 
