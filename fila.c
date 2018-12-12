@@ -10,7 +10,7 @@ typedef struct No {
 typedef struct fila {
   struct No *primeiro;
   struct No *ultimo;
-};
+} Fila;
 
 
 Fila* fila_criar() {
@@ -41,11 +41,11 @@ void fila_add(Fila *f, Token t) {
 
 Token fila_remover(Fila *f) {
     if(f->primeiro == NULL){
-        printf("A fila esta vazia.");
+        printf("A fila esta vazia.\n");
         return;
     }
 
-    No *tmp;
+    No *tmp = f->primeiro;
     tmp = f->primeiro;
 
     f->primeiro = f->primeiro->prox;
