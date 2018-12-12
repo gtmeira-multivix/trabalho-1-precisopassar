@@ -109,9 +109,7 @@ char opcaoMenu[100];
         }
     }
     printf("\n\n\n Resultado do calculo: %.4f\n\n", pilha_pop(pilhaCalc).valor);
-    
     pilha_destruir(pilhaOp);
-    
     fila_destruir(filaSaida);
     printf("\n Digite 'S' para sair ou qualquer digito para calcular novamente: ");
 	gets(opcaoMenu);
