@@ -12,13 +12,13 @@ struct pilha {
 };
 
 Pilha* pilha_criar() {
-	Pilha *p = (Pilha *)malloc(sizeof(Pilha));
+	Pilha *p = (Pilha*)malloc(sizeof(Pilha));
     p->primeiro = NULL;
     return p;
 }
 
 void pilha_push(Pilha *p, Token t) {
-	No *tmp = (No *)malloc(sizeof(No));
+	No *tmp = (No*)malloc(sizeof(No));
     tmp->token = t;
 
     tmp->prox = p->primeiro;
