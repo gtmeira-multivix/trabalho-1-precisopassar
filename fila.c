@@ -13,7 +13,7 @@ struct fila {
 
 
 Fila* fila_criar() {
-	Fila *f = (Fila *) malloc(sizeof(Fila));
+	Fila *f = (Fila*) malloc(sizeof(Fila));
     f->primeiro = NULL;
     f->ultimo = NULL;
     return f;
