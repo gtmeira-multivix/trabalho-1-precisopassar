@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include "fila.h"
 
-typedef struct no {
+typedef struct No {
   Token token;
-  struct no *prox;
+  struct No *prox;
 } No;
 
-struct fila {
-  No *primeiro, *ultimo;
+typedef struct fila {
+  struct No *primeiro;
+  struct No *ultimo;
 };
 
 
