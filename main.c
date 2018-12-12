@@ -117,8 +117,7 @@ char opcaoMenu[100];
 	gets(opcaoMenu);
 	} while ((opcaoMenu[0] != 'S' && opcaoMenu[0] != 's') || strlen(opcaoMenu)>1);
 		
-	printf ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                     ENCERRANDO...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");	
-	system("pause");
+	printf ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                                     ENCERRANDO...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	return 0;
 }
 

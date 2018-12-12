@@ -13,7 +13,7 @@ struct pilha {
 
 Pilha* pilha_criar() {
 	Pilha *p = (Pilha*)malloc(sizeof(Pilha));
-    p->primeiro = NULL;
+    p->primeiro = 0;
     return p;
 }
 
@@ -51,10 +51,10 @@ Token pilha_primeiro(Pilha *p) {
 
 int pilha_vazia(Pilha *p) {
 	if (p->primeiro == NULL){
-        return(1);
+        return 1;
     }
     else{
-        return(0);
+        return 0;
     }
 }
 
