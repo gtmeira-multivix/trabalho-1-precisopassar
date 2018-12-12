@@ -15,15 +15,15 @@ typedef struct fila {
 
 Fila* fila_criar() {
 	Fila *f = (Fila*) malloc(sizeof(Fila));
-    f->primeiro = NULL;
-    f->ultimo = NULL;
+    f->primeiro = 0;
+    f->ultimo = 0;
     return f;
 }
 
 void fila_add(Fila *f, Token t) {
 	No *tmp = (No*) malloc(sizeof(No));
     tmp->token = t;
-    tmp->prox = NULL;
+    tmp->prox = 0;
 
     if(f->ultimo == NULL){
         f->primeiro = tmp;
@@ -40,7 +40,7 @@ void fila_add(Fila *f, Token t) {
 }
 
 Token fila_remover(Fila *f) {
-    if(f->primeiro == NULL){
+    if(f->primeiro == 0){
         printf("A fila esta vazia.\n");
         return;
     }
@@ -50,8 +50,8 @@ Token fila_remover(Fila *f) {
 
     f->primeiro = f->primeiro->prox;
 
-    if(f->primeiro == NULL){
-        f->ultimo == NULL;
+    if(f->primeiro == 0){
+        f->ultimo == 0;
     }
 
     Token tmpToken;
@@ -62,7 +62,7 @@ Token fila_remover(Fila *f) {
 }
 
 int fila_vazia(Fila *f) {
-	if(f->primeiro == NULL){
+	if(f->primeiro == 0){
         return 1;
     }
     else{
@@ -79,7 +79,7 @@ void fila_impressao(Fila *f) {
 	No *tmp;
     tmp = f->primeiro;
 
-    while(tmp != NULL){
+    while(tmp != 0){
         token_imprimir(tmp->token);
         tmp = tmp->prox;
     }

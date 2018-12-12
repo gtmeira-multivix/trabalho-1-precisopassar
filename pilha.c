@@ -26,7 +26,7 @@ void pilha_push(Pilha *p, Token t) {
 }
 
 Token pilha_pop(Pilha *p) {
-    if(p->primeiro == NULL){
+    if(p->primeiro == 0){
         
         return;
     }
@@ -41,7 +41,7 @@ Token pilha_pop(Pilha *p) {
 }
 
 Token pilha_primeiro(Pilha *p) {
-    if(p->primeiro == NULL){
+    if(p->primeiro == 0){
         
         return;
     }
@@ -50,7 +50,7 @@ Token pilha_primeiro(Pilha *p) {
 }
 
 int pilha_vazia(Pilha *p) {
-	if (p->primeiro == NULL){
+	if (p->primeiro == 0){
         return 1;
     }
     else{
@@ -60,7 +60,7 @@ int pilha_vazia(Pilha *p) {
 
 void pilha_destruir(Pilha *p) {
 	No *tmp = p->primeiro;
-    while(tmp != NULL){
+    while(tmp != 0){
         No *excluir = tmp;
         tmp = tmp->prox;
         free(excluir);
@@ -69,12 +69,12 @@ void pilha_destruir(Pilha *p) {
 }
 
 void pilha_imprimir(Pilha *p) {
-	if(p->primeiro == NULL){
+	if(p->primeiro == 0){
        
         return;
     }
     No *tmp = p->primeiro;
-    while(tmp != NULL){
+    while(tmp != 0){
         Token tmpToken = tmp->token;
         token_imprimir(tmpToken);
         tmp = tmp->prox;
