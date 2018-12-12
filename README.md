@@ -32,12 +32,11 @@ Sugere-se que o trabalho seja feito em três partes, nessa ordem:
 É fornecido junto com o trabalho um código auxiliar que realiza a separação dos tokens, bem como uma sugestão de funções a serem implementadas nas estruturas de dados do problema. O uso do código auxiliar não é obrigatório.
 
 ## Entrega
-O trabalho deve ser entregue até as **23:59 do dia 06/10 (sábado)**. A entrega deve ser feita através do GitHub. 
+O trabalho deve ser entregue até as **23:59 do dia 13/12 (quinta-feira)**. A entrega deve ser feita através do GitHub. 
 **Não serão aceitos trabalhos com atraso nem enviados por e-mail.**
 
 ## Grupo
 O trabalho pode ser feito em grupos de até 3 pessoas. Preencha abaixo o nome dos integrantes do grupo:
 
-1) Integrante A - matrícula
-2) Integrante B - matrícula
-3) Integrante C - matrícula
+1) Gabriel Nunes COndessa Araujo - 1515862
+2) Nayara Neves Coutinho - 1824992
