@@ -18,18 +18,18 @@ Pilha* pilha_criar() {
 }
 
 
-void pilha_push(Pilha *p, Token t) {
-	No *tmp = (No*)malloc(sizeof(No));
+void pilha_push(Pilha *p, Token t)
+ {	No *tmp = (No*)malloc(sizeof(No));
     tmp->token = t;
     tmp->prox = p->comeco;
     p->comeco = tmp;
-    free(tmp);
 }
 
 
 Token pilha_pop(Pilha *p) {
     if(p->comeco == NULL){
-        return;
+    	Token t;
+        return t;
     }
 	Token tmpToken = p->comeco->token;
     No *tmp = p->comeco;
@@ -62,7 +62,6 @@ void pilha_destruir(Pilha *p) {
         No *excluir = tmp;
         tmp = tmp->prox;
         free(excluir);
-        free(tmp);
     }
     free(p);
 }
